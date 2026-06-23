@@ -94,7 +94,7 @@ async function fetchDelays(): Promise<Record<string, Record<string, number>>> {
     return allDelays;
 }
 
-app.get('/api/delays', async (req, res) => {
+app.get('/gtfs/delays', async (req, res) => {
     try {
         const now = Date.now();
         if (delayCache && now - delayCache.fetchedAt < CACHE_TTL_MS) {
